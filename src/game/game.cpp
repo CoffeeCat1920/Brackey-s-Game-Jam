@@ -4,7 +4,8 @@
 
 Game::Game() :
   tileMap("./assets/tileMap/tileMap.json"),
-  player(2, 2) {}
+  player(2, 2) 
+{}
 
 
 void Game::Init() {

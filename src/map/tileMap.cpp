@@ -56,14 +56,14 @@ TileMap::TileMap(std::filesystem::path jsonPath) :
 
 std::vector<Vector2> TileMap::GetCollisionRects() {
   std::vector<Vector2> vecs; 
+
+  TileMapLayer layer = tileMapLayer[0];
   
-  for (TileMapLayer layer : tileMapLayer) {
-    for (int x = 0; x < layer.width; x ++) {
-      for (int y = 0; y < layer.height; y++) {
-        uint8_t tileId = layer.tiles[y * width + x];
-        if (tileId > 0) {
-          vecs.push_back(Vector2{(float)x, (float)y});
-        }
+  for (int x = 0; x < layer.width; x ++) {
+    for (int y = 0; y < layer.height; y++) {
+      uint8_t tileId = layer.tiles[y * width + x];
+      if (tileId > 0) {
+        vecs.push_back(Vector2{(float)x, (float)y});
       }
     }
   }
@@ -72,16 +72,16 @@ std::vector<Vector2> TileMap::GetCollisionRects() {
 }
 
 void TileMap::Init() {
-  tileSet = std::make_unique<TileSet>(tileSetPath);
+  this->tileSet = std::make_unique<TileSet>(tileSetPath);
 }
 
 void TileMap::Draw() {
-  for (TileMapLayer layer : tileMapLayer) {
-    for (int x = 0; x < layer.width; x ++) {
-      for (int y = 0; y < layer.height; y++) {
-        uint8_t tileId = layer.tiles[y * width + x];
-        tileSet->DrawTile(tileId, x, y);
-      }
+  TileMapLayer layer = tileMapLayer[0];
+
+  for (int x = 0; x < layer.width; x ++) {
+    for (int y = 0; y < layer.height; y++) {
+      uint8_t tileId = layer.tiles[y * width + x];
+      tileSet->DrawTile(tileId, x, y);
     }
   }
 }

@@ -1,27 +1,38 @@
 #pragma once
-
 #include "raylib/raylib.h"
-#include <cstdint>
 #include <vector>
+#include <cstdint>
 
 class Player {
   
 private:
-  Texture2D texture;
-
-  Vector2 position;
-  Vector2 direction;
+  float moveSpeed;      
+  float jumpVelocity;   
+  Vector2 velocity;     
   
-  float velocity;
-  float gravity;
+  float gravity;        
+  float maxFallSpeed;   
 
-  std::vector<Rectangle> CollisionRecs;
+  float startY;
+  float maxJumpHeight;
+  
+  bool isGrounded;      
+  bool onGround;        
+  
+  std::vector<Rectangle> collisionRecs;
+  
+  void HandleInput();
+  void HandleCollisions();
 
 public:
 
-  Player(uint8_t x, uint8_t y);  
-
+  Player(uint8_t x, uint8_t y);
+  
   void Init(std::vector<Vector2> CollisionLayer);
   void Update();
   void Draw();
+  
+  Vector2 position;
+  Rectangle collisionShape;
+  Texture2D texture;
 };

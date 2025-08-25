@@ -7,6 +7,8 @@ int main () {
 
   InitWindow( BLOCK * BOARD_WIDTH, BLOCK * BOARD_HEIGHT, "Risk it For The Biscuit");
 
+  SetTargetFPS(60);
+
   Game game;
 
   game.Init();
