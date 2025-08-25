@@ -1,0 +1,53 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Isrc",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "bin/src/map/tileSet.o",
+      "src/map/tileSet.cpp"
+    ],
+    "directory": "/home/ok/Code/Brackey-s-Game-Jam",
+    "file": "/home/ok/Code/Brackey-s-Game-Jam/src/map/tileSet.cpp",
+    "output": "/home/ok/Code/Brackey-s-Game-Jam/bin/src/map/tileSet.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Isrc",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "bin/src/game/game.o",
+      "src/game/game.cpp"
+    ],
+    "directory": "/home/ok/Code/Brackey-s-Game-Jam",
+    "file": "/home/ok/Code/Brackey-s-Game-Jam/src/game/game.cpp",
+    "output": "/home/ok/Code/Brackey-s-Game-Jam/bin/src/game/game.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Iinclude",
+      "-Isrc",
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-c",
+      "-o",
+      "bin/main.o",
+      "main.cpp"
+    ],
+    "directory": "/home/ok/Code/Brackey-s-Game-Jam",
+    "file": "/home/ok/Code/Brackey-s-Game-Jam/main.cpp",
+    "output": "/home/ok/Code/Brackey-s-Game-Jam/bin/main.o"
+  }
+]

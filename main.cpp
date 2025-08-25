@@ -1,15 +1,26 @@
-#include "./include/raylib.h"
+#include "game/game.hpp"
+#include "include/core/colors.hpp"
+#include "include/core/settings.hpp"
+#include "raylib/raylib.h"
 
-int main (int argc, char *argv[]) {
-  
-  InitWindow( 64*5 , 64*5, "Animation Test");
+int main () {
+
+  InitWindow( BLOCK * BOARD_WIDTH, BLOCK * BOARD_HEIGHT, "Risk it For The Biscuit");
+
+  Game game;
+
+  game.Init();
 
   while ( !WindowShouldClose() )
   { 
 
+    game.Update();
+
     BeginDrawing();
 
-    ClearBackground(GRAY);
+    game.Draw();
+
+    ClearBackground(GRUVBOX_DARK0);
 
     EndDrawing();
     
